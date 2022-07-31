@@ -205,7 +205,7 @@ class About extends React.Component {
       <Container id="about">
         <FadeInSection>
           <div className="section-header ">
-            <span className="section-title">About me</span>
+            <span className="section-title">{"About me"}</span>
           </div>
           <ContentWrapper>
             <Description>
