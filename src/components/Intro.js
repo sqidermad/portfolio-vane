@@ -1,16 +1,16 @@
 import React from "react";
-import styled from "styled-components";
+import Styled from "styled-components";
 
 import Typist from "react-typist";
 import "react-typist/dist/Typist.css";
-import {Email} from "@styled-icons/material-rounded/Email";
+import {Mail} from "@styled-icons/ionicons-solid/Mail";
 import FadeInSection from "./FadeInSection";
 
-const EmailIcon = styled(Email)`
+const EmailIcon = Styled(Mail)`
   width: 30px;
 `
 
-const Container = styled.div`
+const Container = Styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -26,7 +26,7 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled.span`
+const Title = Styled.span`
   font-family: "NTR", sans-serif;
   font-size: 86px;
 
@@ -35,8 +35,8 @@ const Title = styled.span`
   }
 `;
 
-const StyledTypist = styled(Typist)`
-  color: var(--lightest-slate);
+const StyledTypist = Styled(Typist)`
+  color: var(--white);
   text-align: center;
   font-size: 76px;
   margin-top: -30px;
@@ -48,9 +48,9 @@ const StyledTypist = styled(Typist)`
   }
 `;
 
-const Name = styled.span`
+const Name = Styled.span`
   font-family: "NTR", sans-serif;
-  color: var(--green-bright);
+  color: var(--eastern-blue);
   font-weight: bold;
   font-size: 86px;
 
@@ -59,8 +59,8 @@ const Name = styled.span`
   }
 `;
 
-const Desc = styled.div`
-  color: var(--slate);
+const Desc = Styled.div`
+  color: var(--white);
   font-family: "NTR", sans-serif;
   font-size: 22px;
   max-width: 40%;
@@ -75,17 +75,17 @@ const Desc = styled.div`
   }
 `;
 
-const Contact = styled.a`
+const Contact = Styled.a`
   font-size: 22px;
   font-weight: bolder;
   font-family: "NTR", sans-serif;
   padding: 10px 30px;
   cursor: pointer;
-  border: 1px solid var(--green-bright);
+  border: 1px solid var(--eastern-blue);
   border-radius: 4px;
 
   &:hover {
-    background-color: var(--lightest-navy);
+    background-color: var(--astronaut-blue);
   }
 
   @media (max-width: 992px) {
@@ -123,7 +123,7 @@ class Intro extends React.Component {
         <FadeInSection>
           <Desc>
             A passionate software engineer with creative eagerness to learn,
-            adapt, and openness to feedback. ind myself content to be able to
+            adapt, and openness to feedback. Find myself content to be able to
             help others to learn about anything I’ve learn. Always excited
             working in a supportive team and doing anything related to
             documentation. Looking for opportunities to gain more experiences

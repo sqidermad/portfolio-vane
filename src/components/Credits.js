@@ -10,7 +10,7 @@ const Container = Styled.div`
 
 const EndingCredits = Styled.div`
   font-family: "NTR", sans-serif;
-  color: var(--slate);
+  color: var(--white);
   text-align: center;
   width: 100%;
   font-size: 16px;
@@ -36,7 +36,7 @@ class Credits extends React.Component {
       <FadeInSection>
         <Container id="credits">
           <EndingCredits>
-            <div>Built and designed by <a href="https://github.com/gazijarin/Gazi">Gazi Jarin</a>. Improved by Vane</div>
+            <div>Designed by <a href="https://github.com/gazijarin/Gazi">Gazi Jarin</a>. Build by Vane</div>
             <div>All rights reserved. ©</div>
           </EndingCredits>
         </Container>

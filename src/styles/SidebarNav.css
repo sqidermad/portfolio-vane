@@ -27,11 +27,11 @@
 
 a {
   text-decoration: none !important;
-  color: var(--green-bright) !important;
+  color: var(--eastern-blue) !important;
 }
 
 a:hover {
-  color: var(--lightest-slate) !important;
+  color: var(--white) !important;
 }
 
 .sidebar-logos {

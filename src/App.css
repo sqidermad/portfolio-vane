@@ -25,7 +25,7 @@ html {
 }
 
 .App {
-  background-color: var(--navy);
+  background-color: var(--black-pearl);
   display: flex;
   flex-direction: row;
   /* padding: 36px 76px; */
@@ -36,7 +36,6 @@ html {
 }
 
 #content {
-  /* padding: 80px 200px; */
   width: 100vw;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -46,7 +45,7 @@ html {
 }
 
 ::selection {
-  background: var(--lightest-navy); /* WebKit/Blink Browsers */
+  background: var(--astronaut-blue); /* WebKit/Blink Browsers */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -75,12 +74,12 @@ html {
   margin-top: 39px;
   height: 1px;
   margin-left: 20px;
-  background-color: var(--lightest-navy);
+  background-color: var(--astronaut-blue);
 }
 
 .section-title {
   font-family: "NTR", sans-serif;
-  color: var(--lightest-slate);
+  color: var(--white);
   font-size: 46px;
   font-weight: bold;
 }

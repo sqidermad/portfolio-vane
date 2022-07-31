@@ -7,7 +7,6 @@ import "rsuite/dist/styles/rsuite-default.css";
 import SidebarNav from "./components/SidebarNav";
 import Intro from "./components/Intro";
 import About from "./components/About";
-import Resume from "./components/Resume";
 import Credits from "./components/Credits";
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
       <div id="content">
         <Intro />
         <About />
-        <Resume />
         <Credits/>
       </div>
       <SidebarNav />

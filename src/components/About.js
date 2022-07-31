@@ -1,6 +1,6 @@
 import React from "react";
-
 import Styled from "styled-components";
+import { FolderOpen } from "@styled-icons/ionicons-solid/FolderOpen"
 
 import FadeInSection from "./FadeInSection";
 
@@ -53,7 +53,7 @@ const StyledImg = Styled.img`
 
 const Description = Styled.div`
   font-family: "NTR", sans-serif;
-  color: var(--slate);
+  color: var(--white);
   max-width: 600px;
   font-size: 22px;
   text-align: justify;
@@ -74,12 +74,12 @@ const Description = Styled.div`
     position: relative;
     padding-left: 20px;
     font-size: 18px;
-    color: var(--slate);
+    color: var(--white);
   }
 
   li::before {
     content: "▹    ";
-    color: var(--green-bright);
+    color: var(--eastern-blue);
     position: absolute;
     left: 0;
   }
@@ -92,6 +92,31 @@ const SkillsWrapper = Styled.div`
 
   @media (max-width: 992px) {
     flex-direction: column;
+  }
+`;
+
+const FolderIcon = Styled(FolderOpen)`
+  width: 30px;
+  margin: 5px;
+`
+
+const Download = Styled.a`
+  font-size: 22px;
+  font-weight: bolder;
+  font-family: "NTR", sans-serif;
+  padding: 10px 30px;
+  cursor: pointer;
+  border: 1px solid var(--eastern-blue);
+  border-radius: 4px;
+
+  &:hover {
+    background-color: var(--astronaut-blue);
+  }
+
+  @media (max-width: 992px) {
+    font-size: 16px;
+    align-self: center;
+    margin-left: 30%;
   }
 `;
 
@@ -164,6 +189,18 @@ function Others() {
   );
 }
 
+function Resume() {
+  return(
+    <Download
+      type="submit"
+      onClick={() => window.open("/assets/resume.pdf")}
+    >
+        <FolderIcon/>
+        {"Resume"}
+    </Download>
+  )
+}
+
 class About extends React.Component {
   constructor() {
     super();
@@ -198,6 +235,7 @@ class About extends React.Component {
               />
             </Image>
           </ContentWrapper>
+          <Resume />
         </FadeInSection>
       </Container>
     );
