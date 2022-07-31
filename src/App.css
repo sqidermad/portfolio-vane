@@ -1,12 +1,9 @@
-/* @font-face {
-  font-family: "NTR";
-  font-weight: 200;
-  font-display: fallback;
-  src: url("/fonts/NTR-Regular.ttf") format("truetype");
-} */
-
 html {
   scroll-behavior: smooth;
+}
+
+* {
+  font-family: "NTR", sans-serif;
 }
 
 a {
@@ -49,12 +46,13 @@ a:hover {
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
 .rs-steps-horizontal .rs-steps-item-content {
   text-align: left;
 }
 
 ::selection {
-  background: var(--astronaut-blue); /* WebKit/Blink Browsers */
+  background: var(--astronaut-blue);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -70,30 +68,7 @@ a:hover {
   font-size: calc(10px + 2vmin);
 }
 
-.section-header {
-  display: flex;
-  padding-bottom: 42px;
-  width: 100vw;
-}
-
-.section-header::after {
-  content: "";
-  display: block;
-  width: 300px;
-  margin-top: 39px;
-  height: 1px;
-  margin-left: 20px;
-  background-color: var(--astronaut-blue);
-}
-
-.section-title {
-  font-family: "NTR", sans-serif;
-  color: var(--white);
-  font-size: 46px;
-  font-weight: bold;
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 992px) {
   .App {
     flex-direction: column;
     padding: 40px 24px;
@@ -102,17 +77,5 @@ a:hover {
   #content {
     padding: 10px 10px;
     width: 100%;
-  }
-
-  .section-header {
-    width: unset;
-  }
-
-  .section-header::after {
-    display: none;
-  }
-
-  .section-title {
-    font-size: 32px;
   }
 }

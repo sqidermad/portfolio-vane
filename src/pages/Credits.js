@@ -1,15 +1,10 @@
 import React from "react";
 import Styled from "styled-components";
-import FadeInSection from "./FadeInSection";
 
-const Container = Styled.div`
-  display: flex;
-  align-items: center;
-  padding-top: 100px;
-`
+import FadeInSection from "../components/FadeInSection";
+import { CreditContainer } from "../components/Container";
 
 const EndingCredits = Styled.div`
-  font-family: "NTR", sans-serif;
   color: var(--white);
   text-align: center;
   width: 100%;
@@ -34,12 +29,12 @@ class Credits extends React.Component {
   render() {
     return (
       <FadeInSection>
-        <Container id="credits">
+        <CreditContainer id="credits">
           <EndingCredits>
             <div>Designed by <a href="https://github.com/gazijarin/Gazi">Gazi Jarin</a>. Build by Vane</div>
             <div>All rights reserved. ©</div>
           </EndingCredits>
-        </Container>
+        </CreditContainer>
       </FadeInSection>
     );
   }

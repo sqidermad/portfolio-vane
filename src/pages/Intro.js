@@ -1,33 +1,15 @@
 import React from "react";
 import Styled from "styled-components";
-import {Mail} from "@styled-icons/ionicons-solid/Mail";
 import Typist from "react-typist";
 import "react-typist/dist/Typist.css";
 
-import FadeInSection from "./FadeInSection";
-
-const EmailIcon = Styled(Mail)`
-  width: 30px;
-`
-
-const Container = Styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-left: 15%;
-  padding-top: 18%;
-  min-height: 100vh;
-
-  @media (max-width: 992px) {
-    min-height: unset;
-    padding-left: unset;
-    margin: 0;
-    align-items: center;
-  }
-`;
+import FadeInSection from "../components/FadeInSection";
+import { IntroContainer } from "../components/Container";
+import { EmailIcon } from "../components/Icons";
+import { Description } from "../components/Description";
+import Button from "../components/Button";
 
 const Title = Styled.span`
-  font-family: "NTR", sans-serif;
   font-size: 86px;
 
   @media (max-width: 992px) {
@@ -49,7 +31,6 @@ const StyledTypist = Styled(Typist)`
 `;
 
 const Name = Styled.span`
-  font-family: "NTR", sans-serif;
   color: var(--eastern-blue);
   font-weight: bold;
   font-size: 86px;
@@ -59,27 +40,10 @@ const Name = Styled.span`
   }
 `;
 
-const Desc = Styled.div`
-  color: var(--white);
-  font-family: "NTR", sans-serif;
-  font-size: 22px;
-  max-width: 40%;
-  text-align: justify;
-  padding-bottom: 50px;
-
-  @media (max-width: 992px) {
-    font-size: 18px;
-    text-align: center;
-    max-width: unset;
-    padding-bottom: 40px;
-  }
-`;
-
-const Contact = Styled.a`
+const ButtonContact = Styled.a`
   font-size: 22px;
   font-weight: bolder;
-  font-family: "NTR", sans-serif;
-  padding: 10px 30px;
+  padding: 8px 20px;
   cursor: pointer;
   border: 1px solid var(--eastern-blue);
   border-radius: 4px;
@@ -90,8 +54,10 @@ const Contact = Styled.a`
 
   @media (max-width: 992px) {
     font-size: 16px;
-    align-self: center;
-    margin-left: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3rem;
   }
 `;
 
@@ -112,7 +78,7 @@ class Intro extends React.Component {
   }
   render() {
     return (
-      <Container id="intro">
+      <IntroContainer id="intro">
         <StyledTypist avgTypingDelay={120}>
           <Title>
             {"Hi, "}
@@ -121,20 +87,20 @@ class Intro extends React.Component {
           </Title>
         </StyledTypist>
         <FadeInSection>
-          <Desc>
+          <Description>
             A passionate software engineer with creative eagerness to learn,
             adapt, and openness to feedback. Find myself content to be able to
             help others to learn about anything I’ve learn. Always excited
             working in a supportive team and doing anything related to
             documentation. Looking for opportunities to gain more experiences
             and grow aside as a full-time coder.
-          </Desc>
-          <Contact href="mailto:mariavanessasalim@gmail.com">
+          </Description>
+          <Button href="mailto:mariavanessasalim@gmail.com">
             <EmailIcon />
-            {"  " + "Say hi!"}
-          </Contact>
+            {" " + "Say hi!"}
+          </Button>
         </FadeInSection>
-      </Container>
+      </IntroContainer>
     );
   }
 }

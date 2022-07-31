@@ -5,9 +5,9 @@ import "./styles/Global.css";
 import "rsuite/dist/styles/rsuite-default.css";
 
 import SidebarNav from "./components/SidebarNav";
-import Intro from "./components/Intro";
-import About from "./components/About";
-import Credits from "./components/Credits";
+import Intro from "./pages/Intro";
+import About from "./pages/About";
+import Credits from "./pages/Credits";
 
 function App() {
   return (

@@ -1,21 +1,11 @@
 import React from "react";
 import Styled from "styled-components";
-import { FolderOpen } from "@styled-icons/ionicons-solid/FolderOpen";
 
-import FadeInSection from "./FadeInSection";
-
-const Container = Styled.div`
-  padding-left: 15%;
-  padding-right: 25%;
-  padding-top: 5%;
-  min-height: 50vh;
-
-  @media (max-width: 992px) {
-    height: unset;
-    padding-left: unset;
-    padding-right: unset;
-  }
-`;
+import FadeInSection from "../components/FadeInSection";
+import { AboutContainer } from "../components/Container";
+import { FolderIcon } from "../components/Icons";
+import { Description } from "../components/Description";
+import Button from "../components/Button";
 
 const ContentWrapper = Styled.div`
   display: flex;
@@ -26,7 +16,32 @@ const ContentWrapper = Styled.div`
   }
 `;
 
-const Image = Styled.div`
+const SectionHeader = Styled.div`
+  display: flex;
+  padding-bottom: 42px;
+  width: 100vw;
+
+  ::after {
+    content: "";
+    display: block;
+    width: 300px;
+    margin-top: 39px;
+    height: 1px;
+    margin-left: 20px;
+    background-color: var(--astronaut-blue);
+  }
+
+  @media( max-width: 992px) {
+    padding-bottom: unset;
+    width: unset;
+
+    ::after {
+      display: none;
+    }
+  }
+`;
+
+const ImageWrapper = Styled.div`
   padding-left: 40px;
 
   @media (max-width: 992px) {
@@ -51,40 +66,6 @@ const StyledImg = Styled.img`
   }
 `;
 
-const Description = Styled.div`
-  font-family: "NTR", sans-serif;
-  color: var(--white);
-  max-width: 600px;
-  font-size: 22px;
-  text-align: justify;
-  margin: 0;
-
-  @media (max-width: 992px) {
-    font-size: 18px;
-    text-align: justify;
-  }
-
-  ul {
-    list-style-type: none;
-    grid-template-columns: repeat(2, minmax(150px, 10px));
-    padding: 0;
-  }
-
-  li {
-    position: relative;
-    padding-left: 20px;
-    font-size: 18px;
-    color: var(--white);
-  }
-
-  li::before {
-    content: "▹    ";
-    color: var(--eastern-blue);
-    position: absolute;
-    left: 0;
-  }
-`;
-
 const SkillsWrapper = Styled.div`
   display: flex;
   justify-content: space-between;
@@ -95,15 +76,9 @@ const SkillsWrapper = Styled.div`
   }
 `;
 
-const FolderIcon = Styled(FolderOpen)`
-  width: 30px;
-  margin: 5px;
-`;
-
 const Download = Styled.a`
   font-size: 22px;
   font-weight: bolder;
-  font-family: "NTR", sans-serif;
   padding: 10px 30px;
   cursor: pointer;
   border: 1px solid var(--eastern-blue);
@@ -119,6 +94,15 @@ const Download = Styled.a`
     background-color: var(--astronaut-blue);
   }
 `;
+
+const Title = Styled.h1`
+  color: var(--white);
+  font-weight: bold;
+
+  @media (max-width: 992px) {
+    font-size: 32px;
+  }
+`
 
 function ShortDesc() {
   return (
@@ -177,15 +161,6 @@ function Others() {
   );
 }
 
-function Resume() {
-  return (
-    <Download type="submit" onClick={() => window.open("/assets/resume.pdf")}>
-      <FolderIcon />
-      {"Resume"}
-    </Download>
-  );
-}
-
 class About extends React.Component {
   constructor() {
     super();
@@ -202,27 +177,30 @@ class About extends React.Component {
   }
   render() {
     return (
-      <Container id="about">
+      <AboutContainer id="about">
         <FadeInSection>
-          <div className="section-header ">
-            <span className="section-title">{"About me"}</span>
-          </div>
+          <SectionHeader>
+            <Title>{"About me"}</Title>
+          </SectionHeader>
           <ContentWrapper>
             <Description>
               <ShortDesc />
               <Skills />
               <Others />
             </Description>
-            <Image>
+            <ImageWrapper>
               <StyledImg
                 src={"/assets/vane.jpeg"}
                 alt="Picture of Maria Vanessa Salim"
               />
-            </Image>
+            </ImageWrapper>
           </ContentWrapper>
-          <Resume />
+          <Button onClick={() => window.open("/assets/resume.pdf")}>
+            <FolderIcon />
+            {"Resume"}
+          </Button>
         </FadeInSection>
-      </Container>
+      </AboutContainer>
     );
   }
 }
