@@ -23,18 +23,17 @@ const Wrapper = Styled.a`
   }
 `;
 
-function Button({links, children}) {
+function Button({children, onClick}) {
   return(
-    <Wrapper href={links} onClick={onclick}>
+    <Wrapper onClick={onClick}>
       {children}
     </Wrapper>
   )
 }
 
 Button.propTypes = {
-  links: PropTypes.string,
   children: PropTypes.any,
-  onclick: PropTypes.func,
+  onClick: PropTypes.func,
 }
 
 export default Button;

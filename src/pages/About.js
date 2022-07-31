@@ -76,25 +76,6 @@ const SkillsWrapper = Styled.div`
   }
 `;
 
-const Download = Styled.a`
-  font-size: 22px;
-  font-weight: bolder;
-  padding: 10px 30px;
-  cursor: pointer;
-  border: 1px solid var(--eastern-blue);
-  border-radius: 4px;
-
-  @media (max-width: 992px) {
-    font-size: 16px;
-    align-self: center;
-    margin-left: 30%;
-  }
-
-  &:hover {
-    background-color: var(--astronaut-blue);
-  }
-`;
-
 const Title = Styled.h1`
   color: var(--white);
   font-weight: bold;

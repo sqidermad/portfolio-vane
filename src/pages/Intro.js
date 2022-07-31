@@ -40,27 +40,6 @@ const Name = Styled.span`
   }
 `;
 
-const ButtonContact = Styled.a`
-  font-size: 22px;
-  font-weight: bolder;
-  padding: 8px 20px;
-  cursor: pointer;
-  border: 1px solid var(--eastern-blue);
-  border-radius: 4px;
-
-  &:hover {
-    background-color: var(--astronaut-blue);
-  }
-
-  @media (max-width: 992px) {
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .3rem;
-  }
-`;
-
 class Intro extends React.Component {
   constructor() {
     super();
@@ -95,7 +74,7 @@ class Intro extends React.Component {
             documentation. Looking for opportunities to gain more experiences
             and grow aside as a full-time coder.
           </Description>
-          <Button href="mailto:mariavanessasalim@gmail.com">
+          <Button onClick={() => window.open("mailto:mariavanessasalim@gmail.com")}>
             <EmailIcon />
             {" " + "Say hi!"}
           </Button>
