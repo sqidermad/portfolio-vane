@@ -1,9 +1,9 @@
 import React from "react";
 import Styled from "styled-components";
-
+import {Mail} from "@styled-icons/ionicons-solid/Mail";
 import Typist from "react-typist";
 import "react-typist/dist/Typist.css";
-import {Mail} from "@styled-icons/ionicons-solid/Mail";
+
 import FadeInSection from "./FadeInSection";
 
 const EmailIcon = Styled(Mail)`

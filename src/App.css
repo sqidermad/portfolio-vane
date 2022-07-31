@@ -9,6 +9,15 @@ html {
   scroll-behavior: smooth;
 }
 
+a {
+  text-decoration: none !important;
+  color: var(--eastern-blue) !important;
+}
+
+a:hover {
+  color: var(--white) !important;
+}
+
 /* Animation */
 
 .fade-in-section {
@@ -28,8 +37,8 @@ html {
   background-color: var(--black-pearl);
   display: flex;
   flex-direction: row;
-  /* padding: 36px 76px; */
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

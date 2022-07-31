@@ -1,6 +1,6 @@
 import React from "react";
 import Styled from "styled-components";
-import { FolderOpen } from "@styled-icons/ionicons-solid/FolderOpen"
+import { FolderOpen } from "@styled-icons/ionicons-solid/FolderOpen";
 
 import FadeInSection from "./FadeInSection";
 
@@ -98,7 +98,7 @@ const SkillsWrapper = Styled.div`
 const FolderIcon = Styled(FolderOpen)`
   width: 30px;
   margin: 5px;
-`
+`;
 
 const Download = Styled.a`
   font-size: 22px;
@@ -109,14 +109,14 @@ const Download = Styled.a`
   border: 1px solid var(--eastern-blue);
   border-radius: 4px;
 
-  &:hover {
-    background-color: var(--astronaut-blue);
-  }
-
   @media (max-width: 992px) {
     font-size: 16px;
     align-self: center;
     margin-left: 30%;
+  }
+
+  &:hover {
+    background-color: var(--astronaut-blue);
   }
 `;
 
@@ -136,6 +136,21 @@ function ShortDesc() {
   );
 }
 
+function Skill(props) {
+  return (
+    <ul>
+      <b>{props.title}</b>
+      {props.skill.map(function (skill_item, i) {
+        return (
+          <FadeInSection delay={`${i + 1}00ms`}>
+            <li>{skill_item}</li>
+          </FadeInSection>
+        );
+      })}
+    </ul>
+  );
+}
+
 function Skills() {
   const tech_stack = ["React.js", "HTML, CSS, JS", "Next.js", "Ghost"];
   const testing = ["React Testing Library", "Cypress (e2e)"];
@@ -145,36 +160,9 @@ function Skills() {
     <React.Fragment>
       {"Here are some technologies I have been working with:"}
       <SkillsWrapper>
-        <ul className="tech-stack">
-          <b>Front-end Web</b>
-          {tech_stack.map(function (tech_item, i) {
-            return (
-              <FadeInSection delay={`${i + 1}00ms`}>
-                <li>{tech_item}</li>
-              </FadeInSection>
-            );
-          })}
-        </ul>
-        <ul className="testing">
-          <b>Testing</b>
-          {testing.map(function (test_item, i) {
-            return (
-              <FadeInSection delay={`${i + 1}00ms`}>
-                <li>{test_item}</li>
-              </FadeInSection>
-            );
-          })}
-        </ul>
-        <ul className="tools">
-          <b>Tools</b>
-          {tools.map(function (tool_item, i) {
-            return (
-              <FadeInSection delay={`${i + 1}00ms`}>
-                <li>{tool_item}</li>
-              </FadeInSection>
-            );
-          })}
-        </ul>
+        <Skill title="Front-end Web" skill={tech_stack} />
+        <Skill title="Testing" skill={testing} />
+        <Skill title="Tools" skill={tools} />
       </SkillsWrapper>
     </React.Fragment>
   );
@@ -190,15 +178,12 @@ function Others() {
 }
 
 function Resume() {
-  return(
-    <Download
-      type="submit"
-      onClick={() => window.open("/assets/resume.pdf")}
-    >
-        <FolderIcon/>
-        {"Resume"}
+  return (
+    <Download type="submit" onClick={() => window.open("/assets/resume.pdf")}>
+      <FolderIcon />
+      {"Resume"}
     </Download>
-  )
+  );
 }
 
 class About extends React.Component {
