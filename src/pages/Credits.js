@@ -1,7 +1,6 @@
 import React from "react";
 import Styled from "styled-components";
 
-import FadeInSection from "../components/FadeInSection";
 import { CreditContainer } from "../components/Container";
 
 const EndingCredits = Styled.div`
@@ -28,14 +27,12 @@ class Credits extends React.Component {
   }
   render() {
     return (
-      <FadeInSection>
         <CreditContainer id="credits">
           <EndingCredits>
             <div>Designed by <a href="https://github.com/gazijarin/Gazi">Gazi Jarin</a>. Build by Vane</div>
             <div>All rights reserved. ©</div>
           </EndingCredits>
         </CreditContainer>
-      </FadeInSection>
     );
   }
 }

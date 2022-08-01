@@ -1,7 +1,6 @@
 import React from "react";
 import Styled from "styled-components";
 
-import FadeInSection from "../components/FadeInSection";
 import { AboutContainer } from "../components/Container";
 import { FolderIcon } from "../components/Icons";
 import { Description } from "../components/Description";
@@ -83,7 +82,7 @@ const Title = Styled.h1`
   @media (max-width: 992px) {
     font-size: 32px;
   }
-`
+`;
 
 function ShortDesc() {
   return (
@@ -106,11 +105,7 @@ function Skill(props) {
     <ul>
       <b>{props.title}</b>
       {props.skill.map(function (skill_item, i) {
-        return (
-          <FadeInSection delay={`${i + 1}00ms`}>
-            <li>{skill_item}</li>
-          </FadeInSection>
-        );
+        return <li>{skill_item}</li>;
       })}
     </ul>
   );
@@ -159,28 +154,26 @@ class About extends React.Component {
   render() {
     return (
       <AboutContainer id="about">
-        <FadeInSection>
-          <SectionHeader>
-            <Title>{"About me"}</Title>
-          </SectionHeader>
-          <ContentWrapper>
-            <Description>
-              <ShortDesc />
-              <Skills />
-              <Others />
-            </Description>
-            <ImageWrapper>
-              <StyledImg
-                src={"/assets/vane.jpeg"}
-                alt="Picture of Maria Vanessa Salim"
-              />
-            </ImageWrapper>
-          </ContentWrapper>
-          <Button onClick={() => window.open("/assets/resume.pdf")}>
-            <FolderIcon />
-            {"Resume"}
-          </Button>
-        </FadeInSection>
+        <SectionHeader>
+          <Title>{"About me"}</Title>
+        </SectionHeader>
+        <ContentWrapper>
+          <Description>
+            <ShortDesc />
+            <Skills />
+            <Others />
+          </Description>
+          <ImageWrapper>
+            <StyledImg
+              src={"/assets/vane.jpeg"}
+              alt="Picture of Maria Vanessa Salim"
+            />
+          </ImageWrapper>
+        </ContentWrapper>
+        <Button onClick={() => window.open("/assets/resume.pdf")}>
+          <FolderIcon />
+          {"Resume"}
+        </Button>
       </AboutContainer>
     );
   }

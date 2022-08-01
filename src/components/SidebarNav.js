@@ -3,7 +3,6 @@ import Styled from "styled-components";
 import { Sidenav } from "rsuite";
 import "react-typist/dist/Typist.css";
 
-import FadeInSection from "./FadeInSection";
 import { EmailIcon, LinkedInIcon, GithubIcon } from "./Icons";
 
 const StyledSidebarNav = Styled.div`
@@ -115,9 +114,7 @@ class SidebarNav extends React.Component {
             <Sidenav.Body>
               <SidebarLinks>
                 {links.map((link, i) => (
-                  <FadeInSection delay={`${i + 1}00ms`}>
-                    <div>{link}</div>
-                  </FadeInSection>
+                  <div>{link}</div>
                 ))}
               </SidebarLinks>
             </Sidenav.Body>

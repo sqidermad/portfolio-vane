@@ -3,7 +3,6 @@ import Styled from "styled-components";
 import Typist from "react-typist";
 import "react-typist/dist/Typist.css";
 
-import FadeInSection from "../components/FadeInSection";
 import { IntroContainer } from "../components/Container";
 import { EmailIcon } from "../components/Icons";
 import { Description } from "../components/Description";
@@ -65,7 +64,6 @@ class Intro extends React.Component {
             {" here."}
           </Title>
         </StyledTypist>
-        <FadeInSection>
           <Description>
             A passionate software engineer with creative eagerness to learn,
             adapt, and openness to feedback. Find myself content to be able to
@@ -78,7 +76,6 @@ class Intro extends React.Component {
             <EmailIcon />
             {" " + "Say hi!"}
           </Button>
-        </FadeInSection>
       </IntroContainer>
     );
   }
