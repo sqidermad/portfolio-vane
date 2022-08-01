@@ -7,6 +7,7 @@ import { LogoGithub } from "@styled-icons/ionicons-solid/LogoGithub";
 
 export const EmailIcon = Styled(Mail)`
   width: 30px;
+  margin: 3px;
 
   @media (max-width: 992px) {
     width: 20px;

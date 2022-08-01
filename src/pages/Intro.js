@@ -74,7 +74,7 @@ class Intro extends React.Component {
           </Description>
           <Button onClick={() => window.open("mailto:mariavanessasalim@gmail.com")}>
             <EmailIcon />
-            {" " + "Say hi!"}
+             Say Hi!
           </Button>
       </IntroContainer>
     );
